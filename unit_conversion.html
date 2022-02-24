@@ -14,6 +14,11 @@
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="text/babel">
     function App(){
+        const[minutes,setMinutes] = React.useState(0);
+        const onChange = (event) => {
+            setMinutes(event.target.value);
+        }
+
         return(
             <div>
                 <h1>분에서 시로 변환하기</h1>
@@ -21,10 +26,14 @@
                 <div>
                     <label htmlFor="minutes">분 : </label>
                     <input
+                    value={minutes}
                     id="minutes"
                     placeholder="분을 입력하세요."
-                    type="number"/>    
+                    type="number"
+                    onChange={onChange} />    
+                    <h4>value 연결확인 : {minutes}</h4>
                 </div>
+
                 <div>
                     <label htmlFor="hours">시 : </label>
                     <input
