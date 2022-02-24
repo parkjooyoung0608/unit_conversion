@@ -18,6 +18,7 @@
         const onChange = (event) => {
             setMinutes(event.target.value);
         }
+        const reset = () => setMinutes(0);
 
         return(
             <div>
@@ -41,6 +42,8 @@
                     placeholder="시로 변환됩니다."
                     type="number"/>    
                 </div>
+
+                <button onClick={reset}>Reset</button>
             </div>
         )
     }
